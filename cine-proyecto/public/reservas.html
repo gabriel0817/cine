@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservar Asientos</title>
+    <link rel="stylesheet" href="./css/reservas.css">
+</head>
+
+<body>
+    <header>
+        <h1>Selecciona tus Asientos 🎟️</h1>
+        <nav>
+            <a href="dashboard.html">Inicio</a>
+            <a href="cartelera.html">Cartelera</a>
+            <a href="dashboard.html">Cerrar Sesión</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="info-pelicula">
+            <h2 id="titulo-pelicula">Película: <span id="nombre-pelicula"></span></h2>
+            <p>Fecha: <span id="fecha-pelicula"></span></p>
+            <p>Hora: <span id="hora-pelicula"></span></p>
+        </section>
+
+        <section id="asientos">
+            <h2>Mapa de Asientos</h2>
+            <div id="mapa-asientos">
+                <!-- Mapa de asientos dinámico -->
+            </div>
+            <div id="seleccion-fecha">
+                <label for="fecha">Selecciona la fecha:</label>
+                <input type="date" id="fecha" name="fecha" required>
+                <label for="hora">Selecciona la hora:</label>
+                <input type="time" id="hora" name="hora" required>
+            </div>
+            
+        </section>
+        <button id="confirmar-reserva" disabled>Confirmar Reserva</button>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 CineMaster - Todos los derechos reservados</p>
+    </footer>
+
+    <script>
+        // Pasar datos de película dinámicamente al frontend
+        const peliculaSeleccionada = {
+            id: 1, // Cambia este valor según la película seleccionada
+            nombre: "Título de la Película",
+            fecha: "2024-11-20",
+            hora: "20:00",
+        };
+
+        // Mostrar los datos de la película seleccionada en la interfaz
+        document.getElementById("nombre-pelicula").innerText = peliculaSeleccionada.nombre;
+        document.getElementById("fecha-pelicula").innerText = peliculaSeleccionada.fecha;
+        document.getElementById("hora-pelicula").innerText = peliculaSeleccionada.hora;
+    </script>
+    <script src="./js/reservas.js"></script>
+</body>
+
+</html>
